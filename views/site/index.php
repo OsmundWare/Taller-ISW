@@ -1,6 +1,6 @@
 <?php
 
-/* @var $this yii\web\View */
+/* @var $this yii\web\View probando*/
 
 $this->title = 'My Yii Application';
 ?>
