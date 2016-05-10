@@ -18,7 +18,7 @@ use Yii;
  * @property string $FIC_ESPECIE
  * @property string $FIC_GENERO
  */
-class FICHAMASCOTA extends \yii\db\ActiveRecord
+class Fichamascota extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

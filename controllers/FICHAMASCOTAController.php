@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\FICHAMASCOTA;
-use app\models\FICHAMASCOTASearch;
+use app\models\Fichamascota;
+use app\models\FichamascotaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * FICHAMASCOTAController implements the CRUD actions for FICHAMASCOTA model.
+ * FichamascotaController implements the CRUD actions for Fichamascota model.
  */
-class FICHAMASCOTAController extends Controller
+class FichamascotaController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Lists all FICHAMASCOTA models.
+     * Lists all Fichamascota models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new FICHAMASCOTASearch();
+        $searchModel = new FichamascotaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Displays a single FICHAMASCOTA model.
+     * Displays a single Fichamascota model.
      * @param integer $id
      * @return mixed
      */
@@ -57,13 +57,13 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Creates a new FICHAMASCOTA model.
+     * Creates a new Fichamascota model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new FICHAMASCOTA();
+        $model = new Fichamascota();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->FIC_ID]);
@@ -75,7 +75,7 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Updates an existing FICHAMASCOTA model.
+     * Updates an existing Fichamascota model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -94,7 +94,7 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Deletes an existing FICHAMASCOTA model.
+     * Deletes an existing Fichamascota model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -107,15 +107,15 @@ class FICHAMASCOTAController extends Controller
     }
 
     /**
-     * Finds the FICHAMASCOTA model based on its primary key value.
+     * Finds the Fichamascota model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return FICHAMASCOTA the loaded model
+     * @return Fichamascota the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = FICHAMASCOTA::findOne($id)) !== null) {
+        if (($model = Fichamascota::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

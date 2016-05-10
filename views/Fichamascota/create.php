@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\FICHAMASCOTA */
+/* @var $model app\models\Fichamascota */
 
 $this->title = 'Create Fichamascota';
 $this->params['breadcrumbs'][] = ['label' => 'Fichamascotas', 'url' => ['index']];

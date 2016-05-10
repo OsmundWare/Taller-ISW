@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\FICHAMASCOTASearch */
+/* @var $searchModel app\models\FichamascotaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Fichamascotas';
@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'FIC_OBSERVACION',
             'FIC_NOMBRE_MAS',
             'FIC_COLOR',
-             'FIC_PRESION_MAS',
-             'FIC_PESO_MAS',
-             'FIC_RAZA',
-             'FIC_ESPECIE',
-             'FIC_GENERO',
+            // 'FIC_PRESION_MAS',
+            // 'FIC_PESO_MAS',
+            // 'FIC_RAZA',
+            // 'FIC_ESPECIE',
+            // 'FIC_GENERO',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\FICHAMASCOTA */
+/* @var $model app\models\Fichamascota */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

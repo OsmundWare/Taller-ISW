@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\FICHAMASCOTA */
+/* @var $model app\models\Fichamascota */
 
 $this->title = $model->FIC_ID;
 $this->params['breadcrumbs'][] = ['label' => 'Fichamascotas', 'url' => ['index']];
