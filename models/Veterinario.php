@@ -28,9 +28,14 @@ class Veterinario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+
             [['VET_NOMBRE', 'VET_APELLIDO'], 'string', 'max' => 30],
+            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT'], 'required', 'message' => 'Campo obligatorio'],
+            [['VET_NOMBRE', 'VET_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
+
             [['VET_RUT'], 'string', 'max' => 12],
-            [['VET_RUT'], 'unique'],
+            [['VET_RUT'], 'unique', 'message' => 'Rut no puede encontrarse ya registrado'],
+            [['VET_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => 'Ingresar un Rut válido. Solo son permitidos caracteres numéricos y la letra "K"'],
         ];
     }
 

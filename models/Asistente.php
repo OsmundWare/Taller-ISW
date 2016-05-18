@@ -30,9 +30,14 @@ class Asistente extends \yii\db\ActiveRecord
     {
         return [
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'string', 'max' => 30],
-            [['ASI_RUT'], 'string', 'max' => 12],
+            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT', 'ASI_CARGO'], 'required', 'message' => 'Campo obligatorio'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
+            
             [['ASI_CARGO'], 'string', 'max' => 20],
-            [['ASI_RUT'], 'unique'],
+
+            [['ASI_RUT'], 'string', 'max' => 12],
+            [['ASI_RUT'], 'unique', 'message' => 'Rut no puede encontrarse ya registrado'],
+            [['ASI_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => 'Ingresar un Rut válido. Solo son permitidos carácteres numéricos y la letra "K"'],
         ];
     }
 
