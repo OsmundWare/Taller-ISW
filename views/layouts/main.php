@@ -50,7 +50,7 @@ AppAsset::register($this);
                     'Logout (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link']
                 )
-                . Html::endForm()
+                . Html::endForm( )
                 . '</li>'
             )
         ],
