@@ -48,7 +48,7 @@ class Fichamascota extends \yii\db\ActiveRecord
     {
         return [
             'FIC_ID' => 'ID',
-            'FIC_FEC_NAC' => 'Fecha',
+            'FIC_FEC_NAC' => 'Fecha de Nacimiento',
             'FIC_OBSERVACION' => 'Observacion',
             'FIC_NOMBRE_MAS' => 'Nombre',
             'FIC_COLOR' => 'Color',
