@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
              'FIC_PESO_MAS',
              'FIC_OBSERVACION',
             'FIC_FEC_NAC',
+
             // 'FIC_RAZA',
             // 'FIC_ESPECIE',
             // 'FIC_GENERO',
