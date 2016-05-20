@@ -24,13 +24,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'FIC_ID',
-            'FIC_FEC_NAC',
-            'FIC_OBSERVACION',
+           // 'FIC_ID',
+            //
+
             'FIC_NOMBRE_MAS',
-            'FIC_COLOR',
-            // 'FIC_PRESION_MAS',
-            // 'FIC_PESO_MAS',
+           // 'FIC_COLOR',
+             'FIC_PRESION_MAS',
+             'FIC_PESO_MAS',
+             'FIC_OBSERVACION',
+            'FIC_FEC_NAC',
+
             // 'FIC_RAZA',
             // 'FIC_ESPECIE',
             // 'FIC_GENERO',
