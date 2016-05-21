@@ -27,7 +27,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'My company',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,6 +39,8 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Atencion', 'url' =>['/site/saluda']],
+            ['label' => 'Fichas Mascotas', 'url' => ['/fichamascota/index']],
+            ['label' => 'Clientes', 'url' => ['/cliente/index']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
@@ -49,7 +51,7 @@ AppAsset::register($this);
                     'Logout (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link']
                 )
-                . Html::endForm()
+                . Html::endForm( )
                 . '</li>'
             )
         ],

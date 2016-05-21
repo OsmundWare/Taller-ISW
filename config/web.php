@@ -5,6 +5,7 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'language' =>'es',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
@@ -55,6 +56,7 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
+
     ];
 
     $config['bootstrap'][] = 'gii';
@@ -63,4 +65,8 @@ if (YII_ENV_DEV) {
     ];
 }
 
+
+
+
 return $config;
+
