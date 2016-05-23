@@ -14,7 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'VET_NOMBRE')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'VET_APELLIDO')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'VET_APELLIDO')->textInput(['maxlength' => true])?>
 
     <?= $form->field($model, 'VET_RUT')->textInput(['maxlength' => true]) ?>
 
