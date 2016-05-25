@@ -13,6 +13,7 @@ use yii\widgets\ActiveForm;
  * @property string $ASI_APELLIDO
  * @property string $ASI_RUT
  * @property string $ASI_CARGO
+
  */
 class Asistente extends \yii\db\ActiveRecord
 {
@@ -33,7 +34,7 @@ class Asistente extends \yii\db\ActiveRecord
         return [
 
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'string', 'max' => 30],
-            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT', 'ASI_CARGO'], 'required', 'message' => 'Campo obligatorio'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT', 'ASI_CARGO','ASI_EMAIL', 'ASI_PASS'], 'required', 'message' => 'Campo obligatorio'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'trim'],
             
@@ -42,6 +43,10 @@ class Asistente extends \yii\db\ActiveRecord
             [['ASI_RUT'], 'string', 'min' => 9, 'max' => 10],
             [['ASI_RUT'], 'unique', 'message' => '* Rut no puede encontrarse ya registrado. * Formato de rut debe ser 11222333-4'],
             [['ASI_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => '* Solo son permitidos caracteres numéricos y la letra "K". * Formato de rut debe ser 11222333-4'],
+
+            [['ASI_EMAIL'], 'email', 'message' => "Debe ingresar un email válido"],
+
+            //['ASI_PASS', 'validatePassword'],
 
             /*Valida el rut*/
             array('ASI_RUT','validarRut'),
@@ -111,6 +116,8 @@ class Asistente extends \yii\db\ActiveRecord
             'ASI_APELLIDO' => 'Apellido',
             'ASI_RUT' => 'Rut',
             'ASI_CARGO' => 'Cargo',
+            'ASI_EMAIL' => 'Email',
+            'ASI_PASS' => 'Contraseña',
         ];
     }
 }

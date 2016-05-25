@@ -19,7 +19,7 @@ class AsistenteSearch extends Asistente
     {
         return [
             [['ASI_ID'], 'integer'],
-            [['ASI_NOMBRE', 'ASI_APELLIDO', 'ASI_RUT', 'ASI_CARGO'], 'safe'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO', 'ASI_RUT', 'ASI_CARGO','ASI_EMAIL'], 'safe'],
         ];
     }
 

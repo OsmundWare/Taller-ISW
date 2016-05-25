@@ -14,6 +14,9 @@ use Yii;
  */
 class Veterinario extends \yii\db\ActiveRecord
 {
+
+
+
     /**
      * @inheritdoc
      */
@@ -30,13 +33,17 @@ class Veterinario extends \yii\db\ActiveRecord
         return [
 
             [['VET_NOMBRE', 'VET_APELLIDO'], 'string', 'max' => 30],
-            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT'], 'required', 'message' => 'Campo obligatorio'],
+            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT', 'VET_EMAIL', 'VET_PASS' ], 'required', 'message' => 'Campo obligatorio'],
             [['VET_NOMBRE', 'VET_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
             [['VET_NOMBRE', 'VET_APELLIDO'], 'trim'],
 
             [['VET_RUT'], 'string', 'min' => 9, 'max' => 10],
-            [['VET_RUT'], 'unique', 'message' => '* Rut no puede encontrarse ya registrado. * Formato de rut debe ser 11222333-4'],
+            [['VET_RUT'], 'unique', 'message' => '* Rut no puede encontrarse ya registrado. * Formato de rut debe ser ej: 11222333-4'],
             [['VET_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => '* Solo son permitidos caracteres numéricos y la letra "K". * Formato de rut debe ser 11222333-4'],
+
+            [['VET_EMAIL'], 'email', 'message' => "Debe ingresar un email válido"],
+
+            //['VET_PASS', 'validatePassword'],
 
             /*Valida el rut*/
             array('VET_RUT','validarRut'),
@@ -66,7 +73,6 @@ class Veterinario extends \yii\db\ActiveRecord
         }
 
 
-
     /**
      * @inheritdoc
      */
@@ -77,6 +83,8 @@ class Veterinario extends \yii\db\ActiveRecord
             'VET_NOMBRE' => 'Nombre',
             'VET_APELLIDO' => 'Apellido',
             'VET_RUT' => 'Rut',
+            'VET_EMAIL' => 'Email',
+            'VET_PASS' => 'Contraseña',
         ];
     }
 }

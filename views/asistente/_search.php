@@ -15,8 +15,6 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'ASI_ID') ?>
-
     <?= $form->field($model, 'ASI_NOMBRE') ?>
 
     <?= $form->field($model, 'ASI_APELLIDO') ?>
@@ -24,6 +22,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'ASI_RUT') ?>
 
     <?= $form->field($model, 'ASI_CARGO') ?>
+
+    <?= $form->field($model, 'ASI_EMAIL') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
