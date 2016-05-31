@@ -15,9 +15,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'VET_NOMBRE')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'VET_APELLIDO')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'VET_APELLIDO')->textInput(['maxlength' => true])?>
 
     <?= $form->field($model, 'VET_RUT')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'VET_EMAIL')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'VET_PASS')->passwordInput() ?>
+
+    
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

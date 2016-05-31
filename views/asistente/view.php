@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ASI_APELLIDO',
             'ASI_RUT',
             'ASI_CARGO',
+            'ASI_EMAIL',
         ],
     ]) ?>
 

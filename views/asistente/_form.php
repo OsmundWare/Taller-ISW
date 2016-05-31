@@ -14,11 +14,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ASI_NOMBRE')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'ASI_APELLIDO')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'ASI_APELLIDO')->textInput(['maxlength' => true])?>
 
     <?= $form->field($model, 'ASI_RUT')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'ASI_CARGO')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'ASI_EMAIL')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'ASI_PASS')->passwordInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

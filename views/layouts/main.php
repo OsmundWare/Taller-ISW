@@ -42,6 +42,8 @@ AppAsset::register($this);
             ['label' => 'Fichas Mascotas', 'url' => ['/fichamascota/index']],
             ['label' => 'Clientes', 'url' => ['/cliente/index']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Crear asistente', 'url' => ['/asistente/create']],
+            ['label' => 'Crear veterinario', 'url' => ['/veterinario/create']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (

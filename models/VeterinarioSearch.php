@@ -19,7 +19,8 @@ class VeterinarioSearch extends Veterinario
     {
         return [
             [['VET_ID'], 'integer'],
-            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT'], 'safe'],
+            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT','VET_EMAIL'], 'safe'],
+
         ];
     }
 
