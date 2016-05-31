@@ -47,6 +47,12 @@ class SiteController extends Controller
         ];
     }
 
+    public function actionSaluda()
+    {
+        $mensaje = "Este mensaje fue pasado desde el controlador a la vista";
+        return $this->render("saluda",["frase"=>$mensaje]);
+    }
+
     public function actionIndex()
     {
         return $this->render('index');
