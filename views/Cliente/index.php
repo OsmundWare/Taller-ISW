@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\FichamascotaSearch */
+/* @var $searchModel app\models\ClienteSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Fichamascotas';
+$this->title = 'Clientes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="fichamascota-index">
+<div class="cliente-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Fichamascota', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Cliente', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,19 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-           // 'FIC_ID',
-            //
-
-            'FIC_NOMBRE_MAS',
-           // 'FIC_COLOR',
-             'FIC_PRESION_MAS',
-             'FIC_PESO_MAS',
-             'FIC_OBSERVACION',
-            'FIC_FEC_NAC',
-
-            // 'FIC_RAZA',
-            // 'FIC_ESPECIE',
-            // 'FIC_GENERO',
+            'CLI_ID',
+            'CLI_NOMBRE',
+            'CLI_APELLIDO',
+            'CLI_RUT',
+            'CLI_FECH_NAC',
+            // 'CLI_DIRECCION',
+            // 'CLI_GENERO',
+            // 'CLI_EMAIL:email',
+            // 'CLI_TELEFONO',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

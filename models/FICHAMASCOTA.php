@@ -47,16 +47,16 @@ class Fichamascota extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'FIC_ID' => 'Fic  ID',
-            'FIC_FEC_NAC' => 'Fic  Fec  Nac',
-            'FIC_OBSERVACION' => 'Fic  Observacion',
-            'FIC_NOMBRE_MAS' => 'Fic  Nombre  Mas',
-            'FIC_COLOR' => 'Fic  Color',
-            'FIC_PRESION_MAS' => 'Fic  Presion  Mas',
-            'FIC_PESO_MAS' => 'Fic  Peso  Mas',
-            'FIC_RAZA' => 'Fic  Raza',
-            'FIC_ESPECIE' => 'Fic  Especie',
-            'FIC_GENERO' => 'Fic  Genero',
+            'FIC_ID' => 'ID',
+            'FIC_FEC_NAC' => 'Fecha de Nacimiento',
+            'FIC_OBSERVACION' => 'Observacion',
+            'FIC_NOMBRE_MAS' => 'Nombre',
+            'FIC_COLOR' => 'Color',
+            'FIC_PRESION_MAS' => 'Presion',
+            'FIC_PESO_MAS' => 'Peso',
+            'FIC_RAZA' => 'Raza',
+            'FIC_ESPECIE' => 'Especie',
+            'FIC_GENERO' => 'Genero',
         ];
     }
 }
