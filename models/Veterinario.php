@@ -37,12 +37,16 @@ class Veterinario extends \yii\db\ActiveRecord
             [['VET_NOMBRE', 'VET_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
             [['VET_NOMBRE', 'VET_APELLIDO'], 'trim'],
 
-            [['VET_RUT'], 'string', 'min' => 9, 'max' => 10],
+            [['VET_RUT'], 'string', 'min' => 9, 'max' => 10, 'message' => "Rut debe contener al menos 9 dígitos"],
             [['VET_RUT'], 'unique', 'message' => '* Rut no puede encontrarse ya registrado. * Formato de rut debe ser ej: 11222333-4'],
             [['VET_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => '* Solo son permitidos caracteres numéricos y la letra "K". * Formato de rut debe ser 11222333-4'],
 
             [['VET_EMAIL'], 'email', 'message' => "Debe ingresar un email válido"],
+            [['VET_EMAIL'], 'unique', 'message' => "Email ya registrado"],
+            [['VET_EMAIL'], 'filter', 'filter' => 'trim'],
 
+            [['VET_PASS'], 'string', 'min' => 6, 'max' => 30,'message' => "Contraseña debe contener como mínimo 6 caracteres"],
+            [['VET_PASS'], 'filter', 'filter' => 'trim'],
             //['VET_PASS', 'validatePassword'],
 
             /*Valida el rut*/
