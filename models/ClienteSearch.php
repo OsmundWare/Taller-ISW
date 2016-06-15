@@ -18,8 +18,8 @@ class ClienteSearch extends Cliente
     public function rules()
     {
         return [
-            [['CLI_ID', 'CLI_TELEFONO'], 'integer'],
-            [['CLI_NOMBRE', 'CLI_APELLIDO', 'CLI_RUT', 'CLI_FECH_NAC', 'CLI_DIRECCION', 'CLI_GENERO', 'CLI_EMAIL'], 'safe'],
+            [['CLI_id', 'CLI_telefono'], 'integer'],
+            [['CLI_nombre', 'CLI_apellidop', 'CLI_apellidom', 'CLI_rut', 'CLI_fecha_nacimiento', 'CLI_genero', 'CLI_email', 'CLI_direccion'], 'safe'],
         ];
     }
 
@@ -59,17 +59,18 @@ class ClienteSearch extends Cliente
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'CLI_ID' => $this->CLI_ID,
-            'CLI_FECH_NAC' => $this->CLI_FECH_NAC,
-            'CLI_TELEFONO' => $this->CLI_TELEFONO,
+            'CLI_id' => $this->CLI_id,
+            'CLI_fecha_nacimiento' => $this->CLI_fecha_nacimiento,
+            'CLI_telefono' => $this->CLI_telefono,
         ]);
 
-        $query->andFilterWhere(['like', 'CLI_NOMBRE', $this->CLI_NOMBRE])
-            ->andFilterWhere(['like', 'CLI_APELLIDO', $this->CLI_APELLIDO])
-            ->andFilterWhere(['like', 'CLI_RUT', $this->CLI_RUT])
-            ->andFilterWhere(['like', 'CLI_DIRECCION', $this->CLI_DIRECCION])
-            ->andFilterWhere(['like', 'CLI_GENERO', $this->CLI_GENERO])
-            ->andFilterWhere(['like', 'CLI_EMAIL', $this->CLI_EMAIL]);
+        $query->andFilterWhere(['like', 'CLI_nombre', $this->CLI_nombre])
+            ->andFilterWhere(['like', 'CLI_apellidop', $this->CLI_apellidop])
+            ->andFilterWhere(['like', 'CLI_apellidom', $this->CLI_apellidom])
+            ->andFilterWhere(['like', 'CLI_rut', $this->CLI_rut])
+            ->andFilterWhere(['like', 'CLI_genero', $this->CLI_genero])
+            ->andFilterWhere(['like', 'CLI_email', $this->CLI_email])
+            ->andFilterWhere(['like', 'CLI_direccion', $this->CLI_direccion]);
 
         return $dataProvider;
     }

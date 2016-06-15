@@ -5,17 +5,18 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "Cliente".
+ * This is the model class for table "cliente".
  *
- * @property integer $CLI_ID
- * @property string $CLI_NOMBRE
- * @property string $CLI_APELLIDO
- * @property string $CLI_RUT
- * @property string $CLI_FECH_NAC
- * @property string $CLI_DIRECCION
- * @property string $CLI_GENERO
- * @property string $CLI_EMAIL
- * @property integer $CLI_TELEFONO
+ * @property integer $CLI_id
+ * @property string $CLI_nombre
+ * @property string $CLI_apellidop
+ * @property string $CLI_apellidom
+ * @property string $CLI_rut
+ * @property string $CLI_fecha_nacimiento
+ * @property string $CLI_genero
+ * @property string $CLI_email
+ * @property string $CLI_direccion
+ * @property integer $CLI_telefono
  */
 class Cliente extends \yii\db\ActiveRecord
 {
@@ -24,7 +25,7 @@ class Cliente extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'Cliente';
+        return 'cliente';
     }
 
     /**
@@ -33,11 +34,14 @@ class Cliente extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['CLI_FECH_NAC'], 'safe'],
-            [['CLI_TELEFONO'], 'integer'],
-            [['CLI_NOMBRE', 'CLI_APELLIDO', 'CLI_DIRECCION', 'CLI_EMAIL'], 'string', 'max' => 30],
-            [['CLI_RUT'], 'string', 'max' => 12],
-            [['CLI_GENERO'], 'string', 'max' => 10],
+            [['CLI_nombre', 'CLI_apellidop', 'CLI_apellidom', 'CLI_rut', 'CLI_fecha_nacimiento', 'CLI_genero', 'CLI_email', 'CLI_direccion', 'CLI_telefono'], 'required'],
+            [['CLI_fecha_nacimiento'], 'safe'],
+            [['CLI_telefono'], 'integer'],
+            [['CLI_nombre', 'CLI_apellidop', 'CLI_apellidom'], 'string', 'max' => 30],
+            [['CLI_rut'], 'string', 'max' => 12],
+            [['CLI_genero'], 'string', 'max' => 10],
+            [['CLI_email'], 'string', 'max' => 100],
+            [['CLI_direccion'], 'string', 'max' => 200],
         ];
     }
 
@@ -47,15 +51,16 @@ class Cliente extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'CLI_ID' => 'Cli  ID',
-            'CLI_NOMBRE' => 'Cli  Nombre',
-            'CLI_APELLIDO' => 'Cli  Apellido',
-            'CLI_RUT' => 'Cli  Rut',
-            'CLI_FECH_NAC' => 'Cli  Fech  Nac',
-            'CLI_DIRECCION' => 'Cli  Direccion',
-            'CLI_GENERO' => 'Cli  Genero',
-            'CLI_EMAIL' => 'Cli  Email',
-            'CLI_TELEFONO' => 'Cli  Telefono',
+            'CLI_id' => 'Cli ID',
+            'CLI_nombre' => 'Cli Nombre',
+            'CLI_apellidop' => 'Cli Apellidop',
+            'CLI_apellidom' => 'Cli Apellidom',
+            'CLI_rut' => 'Cli Rut',
+            'CLI_fecha_nacimiento' => 'Cli Fecha Nacimiento',
+            'CLI_genero' => 'Cli Genero',
+            'CLI_email' => 'Cli Email',
+            'CLI_direccion' => 'Cli Direccion',
+            'CLI_telefono' => 'Cli Telefono',
         ];
     }
 }
