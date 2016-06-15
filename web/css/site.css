@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    background: #0d0d0d url(../img/fondo.jpg);
 }
 
 .wrap {
