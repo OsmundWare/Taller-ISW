@@ -80,10 +80,13 @@ class SolicitudController extends Controller
      * @param integer $id
      * @return mixed
      */
+
+
+
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -99,6 +102,7 @@ class SolicitudController extends Controller
      * @param integer $id
      * @return mixed
      */
+
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();

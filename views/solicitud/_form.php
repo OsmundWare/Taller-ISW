@@ -21,13 +21,15 @@ use yii\jui\DatePicker;
 
     <?php echo $form->field($model,'dia_atencion')->
     widget(DatePicker::className(),[
+        'language'=> 'es',
         'dateFormat' => 'yyyy-MM-dd',
         'clientOptions' => [
+            'minDate' => '0',
             'yearRange' => '-115:+0',
             'changeYear' => true]
     ]) ?>
 
-    <?= $form->field($model, 'hora_atencion')->textInput(['maxlength' => true]) ?>
+    <?php echo $form->field($model, 'hora_atencion')->dropDownList(['9:00 am' => '9:00 am', '10:00 am' => '10:00 am', '11:00 am' => '11:00 am']); ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
