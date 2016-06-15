@@ -70,9 +70,26 @@ AppAsset::register($this);
     </div>
 </div>
 
+<footer class="container">
+    <div class="jumbotron">
+    <div class="col-md-3 col-md-offset-1">
+     <h3>Visita nuestras Redes Sociales</h3>
+    <table >
+    <tr>
+        <td><div class="col-md-3"><a href="http://www.facebook.com/"><img src="img/facebook.png"></a></div></td>
+        <td><div class="col-md-3"><a href="http://www.twitter.com/"><img src="img/twitter.png"></a></div></td>
+        <td><div class="col-md-3"><a href="https://plus.google.com/"><img src="img/googleplus.png"></a></div></td>
+    </tr>
+    </table>
+    </div>
+    </div>
+</footer>
+
+
+
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Redox System <?= date('Y') ?></p>
+        <p class="pull-left">&copy; TISW-GrupoRedox <?= date('Y') ?></p>
     </div>
 </footer>
 

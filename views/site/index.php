@@ -78,8 +78,8 @@ $this->title = 'Clinica Veterinaria';
 
               <p class="lead">Descarga Nuestra aplicacion Movil</p>
 
-              <p><a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descarga PlayStore</a></p>
-              <p><a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descarga AppStore</a></p>
+              <p><a class="btn btn-lg btn-success" href="https://play.google.com/store?hl=es"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descarga desde PlayStore</a></p>
+              <p><a class="btn btn-lg btn-success" href="https://itunes.apple.com/cl"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descarga desde AppStore</a></p>
 </div>
         
 </div>
