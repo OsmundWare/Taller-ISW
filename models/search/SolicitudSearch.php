@@ -1,16 +1,16 @@
 <?php
 
-namespace app\models;
+namespace app\models\search;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Veterinario;
+use app\models\Solicitud;
 
 /**
- * VeterinarioSearch represents the model behind the search form about `app\models\Veterinario`.
+ * SolicitudSearch represents the model behind the search form about `app\models\Solicitud`.
  */
-class VeterinarioSearch extends Veterinario
+class SolicitudSearch extends Solicitud
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class VeterinarioSearch extends Veterinario
     public function rules()
     {
         return [
-            [['VET_ID'], 'integer'],
-            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT','VET_EMAIL'], 'safe'],
-
+            [['id'], 'integer'],
+            [['nombre', 'apellido', 'rut', 'dia_atencion', 'hora_atencion'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class VeterinarioSearch extends Veterinario
      */
     public function search($params)
     {
-        $query = Veterinario::find();
+        $query = Solicitud::find();
 
         // add conditions that should always apply here
 
@@ -60,12 +59,14 @@ class VeterinarioSearch extends Veterinario
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'VET_ID' => $this->VET_ID,
+            'id' => $this->id,
+            'dia_atencion' => $this->dia_atencion,
         ]);
 
-        $query->andFilterWhere(['like', 'VET_NOMBRE', $this->VET_NOMBRE])
-            ->andFilterWhere(['like', 'VET_APELLIDO', $this->VET_APELLIDO])
-            ->andFilterWhere(['like', 'VET_RUT', $this->VET_RUT]);
+        $query->andFilterWhere(['like', 'nombre', $this->nombre])
+            ->andFilterWhere(['like', 'apellido', $this->apellido])
+            ->andFilterWhere(['like', 'rut', $this->rut])
+            ->andFilterWhere(['like', 'hora_atencion', $this->hora_atencion]);
 
         return $dataProvider;
     }

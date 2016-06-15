@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Veterinario;
+use app\models\Cliente;
 
 /**
- * VeterinarioSearch represents the model behind the search form about `app\models\Veterinario`.
+ * ClienteSearch represents the model behind the search form about `app\models\Cliente`.
  */
-class VeterinarioSearch extends Veterinario
+class ClienteSearch extends Cliente
 {
     /**
      * @inheritdoc
@@ -18,9 +18,8 @@ class VeterinarioSearch extends Veterinario
     public function rules()
     {
         return [
-            [['VET_ID'], 'integer'],
-            [['VET_NOMBRE', 'VET_APELLIDO', 'VET_RUT','VET_EMAIL'], 'safe'],
-
+            [['CLI_ID', 'CLI_TELEFONO'], 'integer'],
+            [['CLI_NOMBRE', 'CLI_APELLIDO', 'CLI_RUT', 'CLI_FECH_NAC', 'CLI_DIRECCION', 'CLI_GENERO', 'CLI_EMAIL'], 'safe'],
         ];
     }
 
@@ -42,7 +41,7 @@ class VeterinarioSearch extends Veterinario
      */
     public function search($params)
     {
-        $query = Veterinario::find();
+        $query = Cliente::find();
 
         // add conditions that should always apply here
 
@@ -60,12 +59,17 @@ class VeterinarioSearch extends Veterinario
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'VET_ID' => $this->VET_ID,
+            'CLI_ID' => $this->CLI_ID,
+            'CLI_FECH_NAC' => $this->CLI_FECH_NAC,
+            'CLI_TELEFONO' => $this->CLI_TELEFONO,
         ]);
 
-        $query->andFilterWhere(['like', 'VET_NOMBRE', $this->VET_NOMBRE])
-            ->andFilterWhere(['like', 'VET_APELLIDO', $this->VET_APELLIDO])
-            ->andFilterWhere(['like', 'VET_RUT', $this->VET_RUT]);
+        $query->andFilterWhere(['like', 'CLI_NOMBRE', $this->CLI_NOMBRE])
+            ->andFilterWhere(['like', 'CLI_APELLIDO', $this->CLI_APELLIDO])
+            ->andFilterWhere(['like', 'CLI_RUT', $this->CLI_RUT])
+            ->andFilterWhere(['like', 'CLI_DIRECCION', $this->CLI_DIRECCION])
+            ->andFilterWhere(['like', 'CLI_GENERO', $this->CLI_GENERO])
+            ->andFilterWhere(['like', 'CLI_EMAIL', $this->CLI_EMAIL]);
 
         return $dataProvider;
     }

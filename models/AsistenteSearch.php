@@ -19,7 +19,7 @@ class AsistenteSearch extends Asistente
     {
         return [
             [['ASI_ID'], 'integer'],
-            [['ASI_NOMBRE', 'ASI_APELLIDO', 'ASI_RUT', 'ASI_CARGO'], 'safe'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO', 'ASI_RUT', 'ASI_EMAIL'], 'safe'],
         ];
     }
 
@@ -64,8 +64,7 @@ class AsistenteSearch extends Asistente
 
         $query->andFilterWhere(['like', 'ASI_NOMBRE', $this->ASI_NOMBRE])
             ->andFilterWhere(['like', 'ASI_APELLIDO', $this->ASI_APELLIDO])
-            ->andFilterWhere(['like', 'ASI_RUT', $this->ASI_RUT])
-            ->andFilterWhere(['like', 'ASI_CARGO', $this->ASI_CARGO]);
+            ->andFilterWhere(['like', 'ASI_RUT', $this->ASI_RUT]);
 
         return $dataProvider;
     }

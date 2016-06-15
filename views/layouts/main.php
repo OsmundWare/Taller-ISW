@@ -38,8 +38,12 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Atencion', 'url' =>['/solicitud/index']],
             ['label' => 'Fichas Mascotas', 'url' => ['/fichamascota/index']],
+            ['label' => 'Clientes', 'url' => ['/cliente/index']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Crear asistente', 'url' => ['/asistente/create']],
+            ['label' => 'Crear veterinario', 'url' => ['/veterinario/create']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
@@ -49,7 +53,7 @@ AppAsset::register($this);
                     'Logout (' . Yii::$app->user->identity->username . ')',
                     ['class' => 'btn btn-link']
                 )
-                . Html::endForm()
+                . Html::endForm( )
                 . '</li>'
             )
         ],

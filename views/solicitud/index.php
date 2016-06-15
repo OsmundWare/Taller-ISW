@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\VeterinarioSearch */
+/* @var $searchModel app\models\search\SolicitudSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Veterinarios';
+$this->title = 'Solicitudes';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="veterinario-index">
+<div class="solicitud-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear Veterinario', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Solicitud', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,10 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'VET_NOMBRE',
-            'VET_APELLIDO',
-            'VET_RUT',
-            'VET_EMAIL',
+            'id',
+            'nombre',
+            'apellido',
+            'rut',
+            'dia_atencion',
+            // 'hora_atencion',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

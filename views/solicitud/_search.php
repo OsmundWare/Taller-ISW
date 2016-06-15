@@ -4,26 +4,28 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\VeterinarioSearch */
+/* @var $model app\models\search\SolicitudSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="veterinario-search">
+<div class="solicitud-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'VET_ID') ?>
+    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'VET_NOMBRE') ?>
+    <?= $form->field($model, 'nombre') ?>
 
-    <?= $form->field($model, 'VET_APELLIDO') ?>
+    <?= $form->field($model, 'apellido') ?>
 
-    <?= $form->field($model, 'VET_RUT') ?>
+    <?= $form->field($model, 'rut') ?>
 
-    <?= $form->field($model, 'VET_EMAIL') ?>
+    <?= $form->field($model, 'dia_atencion') ?>
+
+    <?php // echo $form->field($model, 'hora_atencion') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
