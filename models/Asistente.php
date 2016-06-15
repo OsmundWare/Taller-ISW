@@ -12,7 +12,8 @@ use yii\widgets\ActiveForm;
  * @property string $ASI_NOMBRE
  * @property string $ASI_APELLIDO
  * @property string $ASI_RUT
- * @property string $ASI_CARGO
+ * @property string $ASI_EMAIL
+ * @property string $ASI_PASS
 
  */
 class Asistente extends \yii\db\ActiveRecord
