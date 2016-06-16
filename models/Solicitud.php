@@ -83,8 +83,8 @@ class Solicitud extends \yii\db\ActiveRecord
             'nombre' => 'Nombre',
             'apellido' => 'Apellido',
             'rut' => 'Rut',
-            'dia_atencion' => 'Dia Atencion',
-            'hora_atencion' => 'Hora Atencion',
+            'dia_atencion' => 'Dia de Atencion',
+            'hora_atencion' => 'Hora de Atencion',
         ];
     }
 }
