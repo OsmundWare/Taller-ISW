@@ -12,21 +12,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'CLI_NOMBRE')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'CLI_nombre')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_APELLIDO')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'CLI_apellidop')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_RUT')->textInput(['maxlength' => true]) ?>
+   <?= $form->field($model, 'CLI_apellidom')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_FECH_NAC')->textInput() ?>
+    <?= $form->field($model, 'CLI_rut')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_DIRECCION')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'CLI_fecha_nacimiento')->textInput() ?>
 
-    <?= $form->field($model, 'CLI_GENERO')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'CLI_direccion')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_EMAIL')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'CLI_genero')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'CLI_TELEFONO')->textInput() ?>
+    <?= $form->field($model, 'CLI_email')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'CLI_telefono')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
