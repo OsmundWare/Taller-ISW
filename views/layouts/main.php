@@ -36,13 +36,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Inicio', 'url' => ['/site/index']],
             ['label' => 'Atencion', 'url' =>['/solicitud/index']],
             ['label' => 'Fichas Mascotas', 'url' => ['/fichamascota/index']],
             ['label' => 'Clientes', 'url' => ['/cliente/index']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Asistentes Veterinarios', 'url' => ['/asistente/index']],
             ['label' => 'Veterinarios', 'url' => ['/veterinario/index']],
+            ['label' => 'Contacto', 'url' => ['/site/contact']],
             ['label' => 'Acerca de', 'url' => ['/site/about']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]

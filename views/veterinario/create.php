@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Veterinario */
 
-$this->title = 'Crear nuevo Veterinario';
+$this->title = 'Crear nuevo perfil de Veterinario';
 $this->params['breadcrumbs'][] = ['label' => 'Veterinarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
