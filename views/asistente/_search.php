@@ -21,9 +21,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ASI_RUT') ?>
 
-    <?= $form->field($model, 'ASI_CARGO') ?>
-
     <?= $form->field($model, 'ASI_EMAIL') ?>
+
+    <?= $form->field($model, 'ASI_CARGO') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>

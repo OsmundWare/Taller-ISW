@@ -39,8 +39,24 @@ AppAsset::register($this);
             ['label' => 'Atencion', 'url' =>['/solicitud/index']],
             ['label' => 'Fichas Mascotas', 'url' => ['/fichamascota/index']],
             ['label' => 'Clientes', 'url' => ['/cliente/index']],
-            ['label' => 'Asistentes Veterinarios', 'url' => ['/asistente/index']],
-            ['label' => 'Veterinarios', 'url' => ['/veterinario/index']],
+            [
+                'label' => 'Asistentes/Secretarias',
+                'items' => [
+                ['label' => 'Ver/Editar/Eliminar perfiles', 'url' => ['/asistente/index']
+                ],
+                ['label' => 'Crear nuevo perfil', 'url' => ['/asistente/create']
+                ],
+            ],
+            ],
+            [
+                'label' => 'Veterinarios',
+                'items' => [
+                ['label' => 'Ver/Editar/Eliminar perfiles', 'url' => ['/veterinario/index']
+                ],
+                ['label' => 'Crear nuevo perfil', 'url' => ['/veterinario/create']
+                ],
+            ],
+            ],
             ['label' => 'Contacto', 'url' => ['/site/contact']],
             ['label' => 'Acerca de', 'url' => ['/site/about']],
             Yii::$app->user->isGuest ? (

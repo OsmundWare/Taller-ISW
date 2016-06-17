@@ -28,6 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ASI_APELLIDO',
             'ASI_RUT',
             'ASI_EMAIL',
+            'ASI_CARGO',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

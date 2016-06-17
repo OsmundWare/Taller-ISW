@@ -21,6 +21,12 @@ class Asistente extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    const CARGO_SECRETARIA = 'Secretaria';
+    const CARGO_ASISTENTE = 'Asistente';
+     
+    public $cargoAux;
+
+
     public static function tableName()
     {
         return 'asistente_veterinario';
@@ -35,7 +41,7 @@ class Asistente extends \yii\db\ActiveRecord
         return [
 
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'string', 'max' => 30],
-            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT','ASI_EMAIL', 'ASI_PASS'], 'required', 'message' => 'Campo obligatorio'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT','ASI_EMAIL', 'ASI_PASS', 'ASI_CARGO'], 'required', 'message' => 'Campo obligatorio'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'filter', 'filter' => 'trim'],
             
@@ -77,6 +83,18 @@ class Asistente extends \yii\db\ActiveRecord
             $this->addError('ASI_RUT', 'Rut inválido. Ingrese nuevamente');
     }
 
+//Obtener permisos
+    public function getCargo() {
+      return array (self::CARGO_SECRETARIA=>'Secretaria',self::CARGO_ASISTENTE=>'Asistente');
+    }
+     
+    public function getLabelCargo($cargoAux) {
+      if ($cargoAux==self::CARGO_ASISTENTE) {
+        return 'Asistente';
+      } else {
+        return 'Secretaria';        
+      }
+    }
 
     /* Darle formato al rut
 
@@ -119,6 +137,7 @@ class Asistente extends \yii\db\ActiveRecord
             'ASI_RUT' => 'Rut',
             'ASI_EMAIL' => 'Email',
             'ASI_PASS' => 'Contraseña',
+            'ASI_CARGO' => 'Cargo',
         ];
     }
 }
