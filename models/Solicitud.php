@@ -32,9 +32,11 @@ class Solicitud extends \yii\db\ActiveRecord
         return [
             [['nombre'], 'string', 'max'=> 45],
             [['nombre'], 'required', 'message' => "El campo nombre debe ser llenado"],
+            [['nombre'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
 
             [['apellido'], 'string', 'max'=> 45],
             [['apellido'], 'required', 'message' => "El campo apellido debe ser llenado"],
+            [['apellido'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
 
             [['rut'], 'string', 'min' => 9, 'max' => 10, 'message'=>'Minimo 9 caracteres.'],
             [['rut'], 'required', 'message' => "El campo rut debe ser llenado"],
