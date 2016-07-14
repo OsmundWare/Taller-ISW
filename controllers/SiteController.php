@@ -2,8 +2,12 @@
 
 namespace app\controllers;
 
+
+
+use RestClient;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -96,5 +100,40 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    /**
+     *
+     */
+    public function actionFeed ()
+    {
+        $api = new RestClient([
+                'base_url' => 'http://localhost:9999/api',
+                'headers' => [
+                    'Accept' => 'application/json'
+                ]
+        ]);
+
+        /*$api->post('default/create', [
+            'VET_NOMBRE' => 'Nombre',
+            'VET_APELLIDO' => 'Apellido Apellido',
+            'VET_RUT' => '22246134-0',
+            'VET_EMAIL' => 'correo@buzon.cl',
+            'VET_PASS' => '123456',
+        ]);*/
+
+        /*$api->put('default/4', [
+           'VET_NOMBRE' => 'NombreAlterado',
+        ]);*/
+
+        /*$api->delete('default/4');*/
+
+        $result = $api->get('/default');
+        $data = Json::decode($result->response);
+
+        //echo '<pre>'; print_r($result->response); die;
+        return $this->render('feed', [
+            'data' => $data
+        ]);
     }
 }

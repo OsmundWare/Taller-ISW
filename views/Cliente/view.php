@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Cliente */
 
-$this->title = $model->CLI_ID;
+$this->title = $model->CLI_id;
 $this->params['breadcrumbs'][] = ['label' => 'Clientes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,15 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'CLI_ID',
-            'CLI_NOMBRE',
-            'CLI_APELLIDO',
-            'CLI_RUT',
-            'CLI_FECH_NAC',
-            'CLI_DIRECCION',
-            'CLI_GENERO',
-            'CLI_EMAIL:email',
-            'CLI_TELEFONO',
+            'CLI_id',
+            'CLI_nombre',
+            'CLI_apellidop',
+            'CLI_apellidom',
+            'CLI_rut',
+            'CLI_fecha_nacimiento',
+            'CLI_direccion',
+            'CLI_genero',
+            'CLI_email',
+            'CLI_telefono',
         ],
     ]) ?>
 

@@ -91,4 +91,13 @@ class Veterinario extends \yii\db\ActiveRecord
             'VET_PASS' => 'Contraseña',
         ];
     }
+
+    public function fields()
+    {
+        return [
+            'VET_ID',
+            'VET_NOMBRE',
+            'VET_APELLIDO'
+        ];
+    }
 }

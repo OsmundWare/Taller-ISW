@@ -22,11 +22,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'CLI_fecha_nacimiento')->textInput() ?>
 
-    <?= $form->field($model, 'CLI_direccion')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'CLI_genero')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'CLI_email')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'CLI_direccion')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'CLI_telefono')->textInput() ?>
 

@@ -28,8 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'VET_APELLIDO',
             'VET_RUT',
             'VET_EMAIL',
-
             ['class' => 'yii\grid\ActionColumn'],
-        ],
+            ],
     ]); ?>
 </div>
