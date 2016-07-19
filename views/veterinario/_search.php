@@ -23,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'VET_RUT') ?>
 
-    <?= $form->field($model, 'VET_EMAIL') ?>
+    <?= $form->field($model, 'username') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

@@ -18,9 +18,9 @@ use yii\widgets\ActiveForm;
 
         <?= $form->field($model, 'ASI_RUT')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'ASI_EMAIL')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'ASI_PASS')->passwordInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
         <?= $form->field($model, 'ASI_CARGO')->dropDownList($model->getCargo(), 
              ['prompt'=>'- Escoja un cargo -']) ?>

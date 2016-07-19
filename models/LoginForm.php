@@ -31,8 +31,10 @@ class LoginForm extends Model
 
             [['password'], 'required', 'message' => 'Debe ingresar su contraseña'],
             // rememberMe must be a boolean value
+
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
+
             ['password', 'validatePassword'],
         ];
     }
@@ -75,7 +77,11 @@ class LoginForm extends Model
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+
+            if (($this->_user = Asistente::findByUsername($this->username)) == false)
+            {
+                $this->_user = Veterinario::findByUsername($this->username);
+            }
         }
 
         return $this->_user;

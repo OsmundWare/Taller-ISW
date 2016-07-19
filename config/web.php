@@ -19,7 +19,11 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Asistente',
+            'identityClass' => 'app\models\Veterinario',
+            'identityClass' => 'app\models\cliente',
+            'identityClass' => 'app\models\solicitud',
+            'identityClass' => 'app\models\fichamascota',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

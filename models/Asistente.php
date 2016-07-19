@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\base\NotSupportedException;
+use yii\web\IdentityInterface;
 use yii\widgets\ActiveForm;
 
 /**
@@ -12,11 +14,11 @@ use yii\widgets\ActiveForm;
  * @property string $ASI_NOMBRE
  * @property string $ASI_APELLIDO
  * @property string $ASI_RUT
- * @property string $ASI_EMAIL
- * @property string $ASI_PASS
+ * @property string $username
+ * @property string $password
 
  */
-class Asistente extends \yii\db\ActiveRecord
+class Asistente extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
      * @inheritdoc
@@ -41,7 +43,7 @@ class Asistente extends \yii\db\ActiveRecord
         return [
 
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'string', 'max' => 30],
-            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT','ASI_EMAIL', 'ASI_PASS', 'ASI_CARGO'], 'required', 'message' => 'Campo obligatorio'],
+            [['ASI_NOMBRE', 'ASI_APELLIDO','ASI_RUT','username', 'password', 'ASI_CARGO'], 'required', 'message' => 'Campo obligatorio'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'match', 'pattern' => "/^[a-zA-Z áéíóú ÁÉÍÓÚ]+$/i", 'message' => 'Solo se admiten letras de la "A" a la "Z"'],
             [['ASI_NOMBRE', 'ASI_APELLIDO'], 'filter', 'filter' => 'trim'],
             
@@ -49,12 +51,12 @@ class Asistente extends \yii\db\ActiveRecord
             [['ASI_RUT'], 'unique', 'message' => '* Rut no puede encontrarse ya registrado. * Formato de rut debe ser 11222333-4'],
             [['ASI_RUT'], 'match', 'pattern' => "/^[0-9kK.-]+$/i", 'message' => '* Solo son permitidos caracteres numéricos y la letra "K". * Formato de rut debe ser 11222333-4'],
 
-            [['ASI_EMAIL'], 'email', 'message' => 'Debe ingresar email válido'],
-            [['ASI_EMAIL'], 'unique', 'message' => 'Email ya registrado'],
-            [['ASI_EMAIL'], 'filter', 'filter' => 'trim'],
+            [['username'], 'email', 'message' => 'Debe ingresar email válido'],
+            [['username'], 'unique', 'message' => 'Email ya registrado'],
+            [['username'], 'filter', 'filter' => 'trim'],
 
-            [['ASI_PASS'], 'string', 'min' => 6, 'max' => 30, 'message' => 'Contraseña debe contener como mínimo 6 caracteres'],
-            [['ASI_PASS'], 'filter', 'filter' => 'trim'],
+            [['password'], 'string', 'min' => 6, 'max' => 30, 'message' => 'Contraseña debe contener como mínimo 6 caracteres'],
+            [['password'], 'filter', 'filter' => 'trim'],
 
             /*Valida el rut*/
             array('ASI_RUT','validarRut'),
@@ -135,9 +137,49 @@ class Asistente extends \yii\db\ActiveRecord
             'ASI_NOMBRE' => 'Nombre',
             'ASI_APELLIDO' => 'Apellido',
             'ASI_RUT' => 'Rut',
-            'ASI_EMAIL' => 'Email',
-            'ASI_PASS' => 'Contraseña',
+            'username' => 'Email',
+            'password' => 'Contraseña',
             'ASI_CARGO' => 'Cargo',
         ];
+    }
+
+
+    public static function findIdentity($id)
+    {
+        return self::findOne($id);
+    }
+
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        throw new \yii\base\NotSupportedException();
+    }
+
+    public function getId()
+    {
+        return $this -> ASI_ID;
+    }
+
+    public function getAuthKey()
+    {
+        //throw new \yii\base\NotSupportedException();
+        //return $this -> authKey;
+        return true;
+    }
+
+    public function validateAuthKey($authKey)
+    {
+        //throw new \yii\base\NotSupportedException();
+        //return $this -> authKey === $authKey;
+        return true;
+    }
+
+    public static function findByUsername($username)
+    {
+        return self::findOne(['username' => $username]);
+    }
+
+    public function validatePassword($password)
+    {
+        return $this -> password === $password;
     }
 }

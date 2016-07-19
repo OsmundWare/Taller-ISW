@@ -8,6 +8,8 @@ use app\models\AsistenteSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+
 
 /**
  * AsistenteController implements the CRUD actions for Asistente model.
@@ -20,6 +22,16 @@ class AsistenteController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                    'class' => AccessControl::classname(),
+                        'only' => ['create', 'update', 'delete'],
+                        'rules' => [
+                            [
+                                'allow' => true,
+                                'roles' => ['@']
+                            ],
+                        ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

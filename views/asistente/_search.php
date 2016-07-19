@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'ASI_RUT') ?>
 
-    <?= $form->field($model, 'ASI_EMAIL') ?>
+    <?= $form->field($model, 'username') ?>
 
     <?= $form->field($model, 'ASI_CARGO') ?>
 
